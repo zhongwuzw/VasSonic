@@ -31,6 +31,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    NSLog(@"home path is %@",NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0]);
+    
     //NSURLProtocol
     [NSURLProtocol registerClass:[SonicURLProtocol class]];
     

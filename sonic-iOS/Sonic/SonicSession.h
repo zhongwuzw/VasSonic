@@ -86,6 +86,8 @@ typedef void(^SonicSessionCompleteCallback) (NSString *sessionID);
 /** Set this property to connect server directly with ip. Without this property sonic will connect to server with domain normally. */
 @property (nonatomic,copy)NSString *serverIP;
 
+- (instancetype)init NS_UNAVAILABLE;
+
 /**
  * Register a SonicConnection Class to provide network data.
  */

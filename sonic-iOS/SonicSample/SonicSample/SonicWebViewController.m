@@ -31,13 +31,17 @@
 - (instancetype)initWithUrl:(NSString *)aUrl useSonicMode:(BOOL)isSonic
 {
     if (self = [super init]) {
-        
+    
         self.url = aUrl;
         
         self.clickTime = (long long)([[NSDate date]timeIntervalSince1970]*1000);
         
         if (isSonic) {
-            [[SonicClient sharedClient] createSessionWithUrl:self.url withWebDelegate:self];
+            TestObject *test = [TestObject new];
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+                [[SonicClient sharedClient] createSessionWithUrl:self.url withWebDelegate:test];
+            });
+            
         }
     }
     return self;

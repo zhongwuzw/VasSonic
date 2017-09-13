@@ -108,11 +108,6 @@ static NSLock *sonicRequestClassLock;
 
 #pragma mark - Lify Cycle
 
-- (instancetype)init NS_UNAVAILABLE
-{
-    return nil;
-}
-
 - (instancetype)initWithUrl:(NSString *)aUrl withWebDelegate:(id<SonicSessionDelegate>)aWebDelegate
 {
     if (self = [super init]) {
