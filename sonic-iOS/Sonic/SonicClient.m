@@ -253,7 +253,6 @@ static bool ValidateSessionDelegate(id<SonicSessionDelegate> aWebDelegate)
     }
     
     if (findSession) {
-        findSession.delegate = nil;
         [findSession cancel];
         [self.tasks removeObjectForKey:findSession.sessionID];
     }
